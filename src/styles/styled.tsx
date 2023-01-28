@@ -1,4 +1,4 @@
-import { AppBar, Box } from "@mui/material";
+import { AppBar, Box, Stack } from "@mui/material";
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -163,7 +163,7 @@ export const StyledProduct = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
+  background: white;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
   border-radius: 8px;
   width: 250.5px;
@@ -286,6 +286,85 @@ export const StyledProduct = styled.div`
   }
 `;
 
+export const StyledSkeleton = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+  border-radius: 8px;
+  width: 250.5px;
+  height: 328px;
+
+  .img {
+    width: 127.8px;
+    height: 158.82px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 2px;
+    .title {
+      height: 43.73px;
+      width: 142.77px;
+    }
+    .price {
+      width: 73.69px;
+      height: 29.92px;
+    }
+  }
+
+  .description {
+    width: 221.06px;
+    height: 28.77px;
+  }
+
+  .button {
+    width: 100%;
+    height: 36.72px;
+  }
+
+  @media (min-width: 960px) {
+    width: 217.56px;
+    height: 285px;
+
+    .img {
+      width: 147.86px;
+      height: 138px;
+    }
+
+    .section {
+      .title {
+        height: 43.73px;
+        width: 142.77px;
+      }
+      .price {
+        width: 64px;
+        height: 26px;
+      }
+    }
+
+    .description {
+      width: 192px;
+      height: 25px;
+    }
+
+    .button {
+      width: 100%;
+      height: 31.91px;
+    }
+  }
+`;
+
 export const StyledDrawer = styled(Box)`
   display: flex;
   flex-direction: column;
@@ -300,7 +379,7 @@ export const StyledDrawer = styled(Box)`
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    width: 100%;
+    min-width: 260px;
     margin-bottom: 30px;
 
     p {
@@ -392,6 +471,10 @@ export const StyledDrawer = styled(Box)`
                 line-height: 24px;
               }
 
+              .quantity {
+                min-width: 7px;
+              }
+
               hr {
                 height: 20px;
               }
@@ -419,6 +502,10 @@ export const StyledDrawer = styled(Box)`
                   font-size: 24px;
                   line-height: 29px;
                 }
+              }
+
+              button:disabled {
+                cursor: not-allowed;
               }
             }
           }
@@ -510,7 +597,7 @@ export const StyledDrawer = styled(Box)`
       justify-content: space-between;
       align-items: center;
       padding-top: 20px;
-      width: 100%;
+      min-width: 395px;
       margin-bottom: 30px;
 
       p {
@@ -689,4 +776,9 @@ export const StyledDrawer = styled(Box)`
       }
     }
   }
+`;
+
+export const StyledToast = styled(Stack)`
+  position: absolute;
+  top: 22vh;
 `;

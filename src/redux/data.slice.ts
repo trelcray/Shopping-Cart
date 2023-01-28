@@ -1,0 +1,83 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+export interface IProductsProps {
+  id: string;
+  name: string;
+  description: string;
+  photo: string;
+  price: string;
+  quantity: number;
+}
+
+interface ICartSliceState {
+  products: IProductsProps[];
+}
+
+const initialState: ICartSliceState = {
+  products: [],
+};
+
+export const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    addProduct: (state, action: PayloadAction<IProductsProps>) => {
+      const productIndex = state.products.findIndex(
+        (product) => product.id === action.payload.id
+      );
+
+      if (productIndex !== -1) {
+        state.products[productIndex].quantity++;
+      } else {
+        state.products = [
+          ...state.products,
+          { ...action.payload, quantity: 1 },
+        ];
+      }
+    },
+    incrementProduct: (state, action: PayloadAction<string>) => {
+      const productIndex = state.products.findIndex(
+        (product) => product.id === action.payload
+      );
+      if (productIndex !== -1) {
+        state.products = [
+          ...state.products.slice(0, productIndex),
+          {
+            ...state.products[productIndex],
+            quantity: state.products[productIndex].quantity + 1,
+          },
+          ...state.products.slice(productIndex + 1),
+        ];
+      }
+    },
+    decrementProduct: (state, action: PayloadAction<string>) => {
+      const productIndex = state.products.findIndex(
+        (product) => product.id === action.payload
+      );
+
+      if (productIndex !== -1 && state.products[productIndex].quantity > 0) {
+        state.products = [
+          ...state.products.slice(0, productIndex),
+          {
+            ...state.products[productIndex],
+            quantity: state.products[productIndex].quantity - 1,
+          },
+          ...state.products.slice(productIndex + 1),
+        ];
+      }
+    },
+    deleteProduct: (state, action: PayloadAction<string>) => {
+      const productFound = state.products.find(
+        (product) => product.id === action.payload
+      );
+      if (productFound) {
+        state.products.splice(state.products.indexOf(productFound), 1);
+      }
+    },
+  },
+});
+
+export const { addProduct, deleteProduct, incrementProduct, decrementProduct } =
+  cartSlice.actions;
+
+export default cartSlice.reducer;
