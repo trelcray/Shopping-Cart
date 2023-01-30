@@ -1,9 +1,9 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Main } from "@/components/Main";
-import { store } from "@/redux/store";
-import { GlobalStyle } from "@/styles/styled";
-import { theme } from "@/styles/theme";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import { Main } from "../components/Main";
+import { store } from "../redux/store";
+import { GlobalStyle } from "../styles/styled";
+import { theme } from "../styles/theme";
 import { ThemeProvider } from "@mui/material";
 import { Provider } from "react-redux";
 
