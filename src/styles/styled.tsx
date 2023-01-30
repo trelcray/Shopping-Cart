@@ -542,7 +542,7 @@ export const StyledCard = styled.div`
     }
   }
 
-  .css-bhp9pd-MuiPaper-root-MuiCard-root {
+  .card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -683,7 +683,7 @@ export const StyledCard = styled.div`
       }
     }
 
-    .css-bhp9pd-MuiPaper-root-MuiCard-root {
+    .card {
       display: flex;
       justify-content: space-between;
       align-items: center;

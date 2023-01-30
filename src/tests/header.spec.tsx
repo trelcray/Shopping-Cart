@@ -4,7 +4,7 @@ import { store } from "../redux/store";
 import { Header } from "../components/Header";
 
 describe("Header component", () => {
-  it("Renders correctly", () => {
+  it("Should renders correctly", () => {
     render(
       <Provider store={store}>
         <Header />

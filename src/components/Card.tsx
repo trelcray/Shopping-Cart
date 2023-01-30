@@ -22,7 +22,7 @@ export function Card({ id, name, price, quantity, photo }: ICardProps) {
     dispatch(decrementProduct(id));
   };
   return (
-    <StyledCard>
+    <StyledCard data-testid="product-name">
       <IconButton
         onClick={() => handleDelete(id)}
         className="close"
@@ -30,7 +30,7 @@ export function Card({ id, name, price, quantity, photo }: ICardProps) {
         aria-label="close">
         <Close />
       </IconButton>
-      <MuiCard>
+      <MuiCard className="card">
         <div className="info">
           <Image alt="image of product" width={100} height={100} src={photo} />
           <p className="title">{name}</p>
@@ -44,14 +44,14 @@ export function Card({ id, name, price, quantity, photo }: ICardProps) {
                   <p>-</p>
                 </button>
                 <Divider className="left" orientation="vertical" />
-                <p className="quantity">{quantity}</p>
+                <p className="quantity" data-testid="product-quantity">{quantity}</p>
                 <Divider className="right" orientation="vertical" />
                 <button onClick={() => handleAddQuantity(id)}>
                   <p>+</p>
                 </button>
               </div>
             </div>
-            <p className="price">R${price}</p>
+            <p className="price" data-testid="product-price">R${price}</p>
           </div>
         </div>
       </MuiCard>
