@@ -1,9 +1,7 @@
-import { StyledHeader } from "@/styles/styled";
+import { StyledHeader } from "../styles/styled";
 import { Drawer } from "./Drawer";
 
-interface Props {}
-
-export function Header({}: Props) {
+export function Header() {
   return (
     <StyledHeader>
       <div>

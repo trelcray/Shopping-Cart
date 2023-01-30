@@ -2,19 +2,13 @@ import {
   decrementProduct,
   deleteProduct,
   incrementProduct,
-} from "@/redux/data.slice";
+} from "../redux/data.slice";
 import { Close } from "@mui/icons-material";
 import { Card as MuiCard, Divider, IconButton } from "@mui/material";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
+import { ICardProps } from "../@types";
 
-interface ICardProps {
-  id: string;
-  name: string;
-  quantity: number;
-  price: string;
-  photo: string;
-}
 
 export function Card({ id, name, price, quantity, photo }: ICardProps) {
   const dispatch = useDispatch();

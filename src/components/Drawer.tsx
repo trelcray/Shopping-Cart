@@ -1,11 +1,11 @@
 import { Drawer as MuiDrawer } from "@mui/material";
 import { Button } from "@mui/material";
 import { IconButton, Typography } from "@mui/material";
-import { StyledDrawer } from "@/styles/styled";
+import { StyledDrawer } from "../styles/styled";
 import { Close, ShoppingCart } from "@mui/icons-material";
 import { Card } from "./Card";
 import { useState } from "react";
-import { useAppSelector } from "@/hooks/useAppSelector";
+import { useAppSelector } from "../hooks/useAppSelector";
 
 export function Drawer() {
   const [isOpen, setIsOpen] = useState(false);

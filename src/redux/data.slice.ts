@@ -1,17 +1,5 @@
+import { ICartProductsSliceProps, ICartSliceState } from "../@types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export interface IProductsProps {
-  id: string;
-  name: string;
-  description: string;
-  photo: string;
-  price: string;
-  quantity: number;
-}
-
-interface ICartSliceState {
-  products: IProductsProps[];
-}
 
 const initialState: ICartSliceState = {
   products: [],
@@ -21,7 +9,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addProduct: (state, action: PayloadAction<IProductsProps>) => {
+    addProduct: (state, action: PayloadAction<ICartProductsSliceProps>) => {
       const productIndex = state.products.findIndex(
         (product) => product.id === action.payload.id
       );

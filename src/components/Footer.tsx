@@ -1,8 +1,6 @@
-import { StyledFooter } from "@/styles/styled";
+import { StyledFooter } from "../styles/styled";
 
-interface Props {}
-
-export function Footer({}: Props) {
+export function Footer() {
   return (
     <StyledFooter>
       <p>MKS sistemas © Todos os direitos reservados.</p>

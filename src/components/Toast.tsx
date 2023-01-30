@@ -1,12 +1,6 @@
-import { StyledToast } from "@/styles/styled";
+import { StyledToast } from "../styles/styled";
 import { Alert } from "@mui/material";
-import { Stack } from "@mui/material";
-import { Dispatch } from "react";
-
-interface IToastProps {
-  isOpen: boolean;
-  setIsOpen: Dispatch<boolean>;
-}
+import { IToastProps } from "../@types";
 
 export function Toast({ isOpen, setIsOpen }: IToastProps) {
   return (

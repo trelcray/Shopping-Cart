@@ -1,18 +1,11 @@
-import { addProduct } from "@/redux/data.slice";
-import { api } from "@/services/api";
+import { addProduct } from "../redux/data.slice";
+import { api } from "../services/api";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Product } from "./Product";
 import { Skeleton } from "./Skeleton";
 import { Toast } from "./Toast";
-
-export interface IProductsProps {
-  id: string;
-  name: string;
-  description: string;
-  photo: string;
-  price: string;
-}
+import { IProductsProps } from "../@types";
 
 export function Main() {
   const [products, setProducts] = useState<IProductsProps[]>([]);
@@ -63,6 +56,7 @@ export function Main() {
             return (
               <Product
                 key={data.id}
+                data-testid="product"
                 id={data.id}
                 description={data.description}
                 name={data.name}

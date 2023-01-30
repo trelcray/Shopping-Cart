@@ -1,17 +1,8 @@
-import { StyledProduct } from "@/styles/styled";
+import { StyledProduct } from "../styles/styled";
 import { ShoppingBag } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import Image from "next/image";
-import { IProductsProps } from "./Main";
-
-interface Props {
-  id: string;
-  name: string;
-  description: string;
-  photo: string;
-  price: string;
-  addToCart: (data: IProductsProps) => void;
-}
+import { ICartProductProps } from "../@types";
 
 export function Product({
   id,
@@ -20,7 +11,7 @@ export function Product({
   photo,
   price,
   addToCart,
-}: Props) {
+}: ICartProductProps) {
   return (
     <StyledProduct>
       <Image alt="lol" width={100} height={100} src={photo} />

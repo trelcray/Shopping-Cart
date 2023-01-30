@@ -1,4 +1,4 @@
-import { StyledSkeleton } from "@/styles/styled";
+import { StyledSkeleton } from "../styles/styled";
 import { Skeleton as MuiSkeleton } from "@mui/material";
 
 export function Skeleton() {

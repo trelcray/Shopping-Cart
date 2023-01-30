@@ -141,7 +141,7 @@ export const StyledHeader = styled(AppBar)`
   }
 `;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
