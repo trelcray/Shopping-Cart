@@ -14,7 +14,7 @@ export function Product({
 }: ICartProductProps) {
   return (
     <StyledProduct>
-      <Image alt="lol" width={100} height={100} src={photo} />
+      <Image alt="image of product" width={100} height={100} src={photo} />
       <section>
         <p className="title">{name}</p>
         <span>

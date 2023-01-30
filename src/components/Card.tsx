@@ -8,7 +8,7 @@ import { Card as MuiCard, Divider, IconButton } from "@mui/material";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { ICardProps } from "../@types";
-
+import { StyledCard } from "../styles/styled";
 
 export function Card({ id, name, price, quantity, photo }: ICardProps) {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export function Card({ id, name, price, quantity, photo }: ICardProps) {
     dispatch(decrementProduct(id));
   };
   return (
-    <div className="card">
+    <StyledCard>
       <IconButton
         onClick={() => handleDelete(id)}
         className="close"
@@ -32,7 +32,7 @@ export function Card({ id, name, price, quantity, photo }: ICardProps) {
       </IconButton>
       <MuiCard>
         <div className="info">
-          <Image alt="lol" width={100} height={100} src={photo} />
+          <Image alt="image of product" width={100} height={100} src={photo} />
           <p className="title">{name}</p>
           <div className="mobileDirection">
             <div className="count">
@@ -55,6 +55,6 @@ export function Card({ id, name, price, quantity, photo }: ICardProps) {
           </div>
         </div>
       </MuiCard>
-    </div>
+    </StyledCard>
   );
 }
